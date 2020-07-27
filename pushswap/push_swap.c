@@ -106,6 +106,5 @@ int				main(int argc, char **argv)
 	}
 	else
 		write(2, "Error\n", 6);
-	free_stack_ab(&ptr_a, &ptr_b);
 	return (0);
 }
