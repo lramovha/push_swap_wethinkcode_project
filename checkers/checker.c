@@ -100,14 +100,13 @@ int				main(int argc, char **argv)
 			i = evaluate_commands(&ptr_a, &ptr_b);
 			if (i == 1)
 				write(1, "OK\n", 3);
-			else if (i == 0)
-				write(1, "KO\n", 3);
 			else if (i == 2)
+				write(1, "KO\n", 3);
+			else if (i == 3)
 				write(2, "Error\n", 6);
 		}
 		else
 			write(2, "Error\n", 6);
 	}
-	free_stack_ab(&ptr_a, &ptr_b);
 	return (0);
 }
