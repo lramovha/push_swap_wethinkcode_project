@@ -101,8 +101,6 @@ int				main(int argc, char **argv)
 			if (i == 1)
 				write(1, "OK\n", 3);
 			else if (i == 2)
-				write(1, "KO\n", 3);
-			else if (i == 3)
 				write(2, "Error\n", 6);
 		}
 		else
