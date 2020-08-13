@@ -61,6 +61,8 @@ static int		assign_array_values(int argc, char **argv, node_a *ptr_a)
 	int		j;
 	int		k;
 	char	**s;
+	int		max_int = 2147483647;
+	int		tmp_val;
 
 	k = 0;
 	i = 1;
@@ -71,8 +73,9 @@ static int		assign_array_values(int argc, char **argv, node_a *ptr_a)
 		j = 0;
 		while (s[j])
 		{
+			tmp_val = ft_atoi(s[j]);
 			ptr_a->values[k] = ft_atoi(s[j]);
-			if (compare_elements(ptr_a->values[k], s[j]))
+			if (compare_elements(ptr_a->values[k], s[j]) || max_int == tmp_val)
 				return (0);
 			k++;
 			j++;
@@ -102,6 +105,8 @@ int				main(int argc, char **argv)
 				write(1, "OK\n", 3);
 			else if (i == 2)
 				write(2, "Error\n", 6);
+			else if(i == 0)
+				write(2, "KO\n", 3);
 		}
 		else
 			write(2, "Error\n", 6);

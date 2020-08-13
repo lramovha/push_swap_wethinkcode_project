@@ -8,9 +8,9 @@ static int		check_instructions(node_a *ptr_a, node_b *ptr_b, char *line)
 		swap_sb(ptr_b);
 	else if ((ft_strcmp(line, "ss") == 0))
 		swap_ss(ptr_a, ptr_b);
-	else if ((ft_strcmp(line, "pa") == 0))
+	else if ((ft_strcmp(line, "pa") == 0) && ptr_b->end != -1)
 		push_pa(ptr_a, ptr_b);
-	else if ((ft_strcmp(line, "pb") == 0))
+	else if ((ft_strcmp(line, "pb") == 0) && ptr_a->end != -1)
 		push_pb(ptr_a, ptr_b);
 	else if ((ft_strcmp(line, "ra") == 0))
 		rotate_ra(ptr_a);
@@ -59,9 +59,10 @@ int				evaluate_commands(node_a *ptr_a, node_b *ptr_b)
 	fd = 0;
 	while (get_next_line(fd, &line) && check_sorted(ptr_a, ptr_b) != 1)
 	{
-		check_instructions(ptr_a, ptr_b, line);
 		if ((check_instructions(ptr_a, ptr_b, line) == 0))
 			return (2);
+		else
+			check_instructions(ptr_a, ptr_b, line);
 		free(line);
 	}
 	if (check_sorted(ptr_a, ptr_b) == 1)

@@ -33,6 +33,7 @@ static int		return_size(int argc, char **argv)
 	int		j;
 	int		k;
 	char	**s;
+	int		max_int = 2147483647;
 
 	size = 0;
 	k = 0;
@@ -44,7 +45,7 @@ static int		return_size(int argc, char **argv)
 		while (s[j])
 		{
 			k = ft_atoi(s[j]);
-			if (compare_elements(k, s[j]))
+			if (compare_elements(k, s[j]) || max_int == k)
 				return (0);
 			j++;
 			size++;
