@@ -57,15 +57,13 @@ int				evaluate_commands(node_a *ptr_a, node_b *ptr_b)
 	if (check_duplicate(ptr_a) == 0)
 		return (2);
 	fd = 0;
-	while (get_next_line(fd, &line) && check_sorted(ptr_a, ptr_b) != 1)
+	while (get_next_line(fd, &line))
 	{
 		if ((check_instructions(ptr_a, ptr_b, line) == 0))
 			return (2);
-		else
-			check_instructions(ptr_a, ptr_b, line);
 		free(line);
 	}
-	if (check_sorted(ptr_a, ptr_b) == 1)
+	if (check_sorted(ptr_a, ptr_b))
 		return (1);
 	else
 		return (0);
