@@ -8,7 +8,7 @@ You have two stacks: stack_a and stack_b. The numbers to be sorted are initially
 # Instructions
 ![push_swap](https://github.com/user-attachments/assets/c970333d-afe1-436a-a3d0-a0af4cb1e791)
 
-#pushSwap rules
+# PushSwap rules
 ![push_swap1](https://github.com/user-attachments/assets/c993abdc-a539-404a-9956-703c994d46b5)
 
 # Key Skills Practiced
